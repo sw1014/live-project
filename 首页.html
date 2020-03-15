@@ -3,12 +3,12 @@
 <head>
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script  src="js/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="js/information.js"></script> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>口罩预约平台</title>
-    <script>
-    </script>
     <style type="text/css">
     html,body
     {
@@ -59,9 +59,6 @@
 
     }
 
-
-
-
     </style>
 </head>
 <body>
@@ -85,32 +82,27 @@
                 </div>
                 <div class="modal-body" style="display: flex;justify-content: center;flex-direction: column;">
                     <form>
-                        <div class="form">姓名:<input type="text" name="name"></div>
-                        <div class="form">身份证号:<input type="text" name="idcard"></div>
-                        <div class="form">手机号:<input type="text" name="phonenumber"></div>
-                        <div class="form">预约口罩数量:<input type="text" name="masknumber"></div>
+                        <div class="form">姓名:<input id="name" type="text" name="name"></div>
+                        <div class="form">身份证号:<input id="idcard" type="text" name="idcard"></div>
+                        <div class="form">手机号:<input id="tel" type="text" name="tel"></div>
+                        <div class="form">预约口罩数量:
+                            <select id="number">
+                                <option value ="1">1个</option>
+                                <option value ="2">2个</option>
+                                <option value ="3">3个</option>
+                            </select>
+                        <div>
                     </form>  
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn2" data-dismiss="modal" >结束当前预约
                     </button>
-                    <button type="button" class="btn2">
-                        开始新的预约
+                    <button type="button" class="btn2" onclick="order()">开始新的预约
                     </button>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
     
 </body>
 </html>
