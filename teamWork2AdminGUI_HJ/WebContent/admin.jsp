@@ -13,10 +13,10 @@
 	<div id="main">
 		<div id="navitagorDiv">
 			<nav>
-				<a href="#setAppointmentTimeDiv">设置预约时间</a> 
-				<a href="#setAppointmentLimitDiv">设置预约上限<a> 
-				<a href="#setMaskNumDiv">设置口罩总数<a>
-				<a href="#exportLuckyListDiv">导出中签名单<a>
+				<a href="#setAppointmentTimeDiv">设置预约时间</a> <a
+					href="#setAppointmentLimitDiv">设置预约上限<a> <a
+						href="#setMaskNumDiv">设置口罩总数<a> <a
+								href="#exportLuckyListDiv">导出中签名单<a>
 			</nav>
 		</div>
 		<div id="setAppointmentTimeDiv">
@@ -53,6 +53,15 @@
 		</div>
 
 		<%
+			String currentDay = (String) request.getAttribute("date");
+			if (currentDay == null) {
+				currentDay = "2020-03-13";
+		%>
+		<script type="text/javascript">
+			window.location.href = "adminDBServlet?date=2020-03-13";
+		</script>
+		<%
+			}
 			String[] dateList = (String[]) request.getAttribute("dateList");
 			//dateList为中签名单的名字列表，即日期，供下方选择
 			if (dateList == null) {
@@ -60,7 +69,6 @@
 				dateList[0] = "2020-03-13";
 				dateList[1] = "2020-03-14";
 				dateList[2] = "2020-03-15";
-				String currentDay="2020-03-13";
 			}
 			String[][] nameList = (String[][]) request.getAttribute("nameList");
 			if (nameList == null) {
@@ -81,7 +89,12 @@
 				<select id="dateSelects">
 					<%
 						for (int i = 0; i < dateList.length; i++) {
-					%><option value=<%=dateList[i]%>><%=dateList[i]%></option>
+							if (dateList[i]!=null && dateList[i].equals(currentDay) ) {
+					%><option value=<%=dateList[i]%> selected="selected"><%=dateList[i]%></option>
+					<%
+						} else
+					%>
+					<option value=<%=dateList[i]%>><%=dateList[i]%></option>
 					<%
 						}
 					%>
@@ -127,7 +140,9 @@
 		}
 		var dates = document.getElementById("dateSelects");
 		dates.onchange = function() {
-			window.location.href = "test.jsp?type=changeDates&date="
+			//alert("admin.jsp?type=changeDates&date="
+			//+ dates.value);
+			window.location.href = "adminDBServlet?type=changeDates&date="
 					+ dates.value;
 		}
 		var exportButton = document.getElementById("export");
