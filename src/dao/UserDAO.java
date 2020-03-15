@@ -15,9 +15,9 @@ public class UserDAO {
         String sql = "insert into user values(? ,? ,?, ?)";
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {
             ps.setString(1, bean.getName());
-            ps.setString(2, bean.getId());
+            ps.setString(2, bean.getIDNum());
             ps.setString(3, bean.getPhone());
-            ps.setString(4, bean.getNumber());
+            ps.setString(4, bean.getMaskNum());
             ps.execute();
             
         } catch (SQLException e) {
