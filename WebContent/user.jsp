@@ -93,7 +93,7 @@
                                 <option value ="2">2个</option>
                                 <option value ="3">3个</option>
                             </select>
-                        <div>
+                        </div>
                     </form>  
                 </div>
                 <div class="modal-footer">

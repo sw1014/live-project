@@ -4,7 +4,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -66,9 +69,13 @@ public class UserServlet extends HttpServlet {
 				}
 			}			
 		}
+		
+		Map<String,Object> rData = new HashMap<String,Object>();
+		rData.put("result", result);
+		response.setHeader("content-type", "application/json;charset=UTF-8");//告诉浏览器他发送的什么类型
 		PrintWriter out = response.getWriter();
-		response.setHeader("content-type", "text;charset=UTF-8");//告诉浏览器他发送的什么类型
-		out.print(result);
+		JSONObject json = new JSONObject(rData);
+		out.print(json);
 	
 	}
 
