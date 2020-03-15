@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.websocket.Session;
 
 import com.alibaba.fastjson.JSONObject;
 
@@ -51,23 +52,28 @@ public class UserServlet extends HttpServlet {
 		user.setPhone(tel);
 		int num = Integer.parseInt(request.getParameter("number"));
 		UserDao userdao = new UserDao();
-		String result = "预约失败";
-		String result1 = userdao.lookReservation(user);
-		String result2 = userdao.lookgetmasklist(user);
+		String result="预约失败";
+		String result1=userdao.lookReservation(user);
+		String result2=userdao.lookgetmasklist(user);
+		String result3=userdao.lookgetmasklist2(user,(String)request.getSession().getAttribute("date"));
 		System.out.println(result1);
 		System.out.println(result2);
-
-		if (result1.equals("预约成功"))// 查看用户是否已经在本次预约 预约过
+		userdao.lookgetmasklist2(user,(String)request.getSession().getAttribute("date"));
+		if(result1.equals("预约成功"))//查看用户是否已经在本次预约 预约过
 		{
-			if (result2.equals("预约成功")) {
-				if (num < maskNum)// 还有口罩
+			if (result2.equals("预约成功")) 
+			{
+				if (result3.equals("预约成功")) 
 				{
-					result = "预约成功";
-					maskNum = maskNum - num;
-					userdao.addgetmasklist(user);// 加入中签表
-					userdao.addReservation(user);// 加入预约表
+					if (num<maskNum)//还有口罩 
+					{
+						result="预约成功";
+						maskNum=maskNum-num;
+						userdao.addgetmasklist(user,(String)request.getSession().getAttribute("date"));//加入中签表		
+						userdao.addReservation(user);//加入预约表
+					}
 				}
-			}
+			}			
 		}
 		Map<String, Object> rData = new HashMap<String, Object>();
 		rData.put("result", result);

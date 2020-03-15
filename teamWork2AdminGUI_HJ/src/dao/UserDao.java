@@ -9,6 +9,12 @@ import java.util.Date;
 import pojo.User;
 import util.DBUtil;
 
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 public class UserDao{
 	
     public void addUser(User bean) {
@@ -41,7 +47,7 @@ public class UserDao{
             e.printStackTrace();
         }
     }
-    public void addgetmasklist(User bean) {
+    public void addgetmasklist(User bean,String date) {
 
         String sql = "insert into getMaskList values(? ,? ,?, ?, ?, ?)";
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {
@@ -52,9 +58,6 @@ public class UserDao{
             ps.setString(3, bean.getId());
             ps.setString(4, bean.getPhone());
             ps.setString(5, bean.getNumber());
-            Date date1 = new Date();
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");  
-            String date=formatter.format(date1);
             ps.setString(6, date);
             ps.execute();
             
@@ -111,9 +114,35 @@ public class UserDao{
     	
     }
     
-    
-    
-    
-    
-    
+    public String lookgetmasklist2(User bean,String date) //遍历中签表
+    {
+    	String sql = "select * from getMaskList where IDNum = ?";
+    	 Date date1 = new Date();
+         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
+        
+         
+         //String date=session.getAttribute("date");// new Date()为获取当前系统时间 你可以改成sesstion的date
+         date=date.replace("-", "");
+         int a=Integer.parseInt(date);
+    	try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {
+            ps.setString(1, bean.getId());
+            ResultSet resultSet = ps.executeQuery();
+            while(resultSet.next())
+            {
+            	String st=resultSet.getString("date");//获取中签表内的日期
+            	st=st.replace("-", "");
+            	int b=Integer.parseInt(st);
+            	if (a-3<b) 
+            	{
+					return "预约失败";
+				}
+            }
+            return "预约成功";
+ 
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return "error";
+        }
+    	
+    }
 }

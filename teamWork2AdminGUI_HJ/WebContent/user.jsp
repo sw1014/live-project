@@ -72,16 +72,16 @@ body {
 		String date = (String) session.getAttribute("date");
 		if (date == null) {
 			session.setAttribute("date", "2020-03-15");
-			date= "2020-03-15";
+			date = "2020-03-15";
 		}
 		String situation = (String) session.getAttribute("situation");
 		if (situation == null) {
 			session.setAttribute("situation", "预约中～～");
-			situation= "预约中～～";
+			situation = "预约中～～";
 		}
 	%>
 	<div style="text-align: center;">
-		<p id="situation"><%=situation %></p>
+		<p id="situation"><%=situation%></p>
 		<p><%=date%>
 		</p>
 	</div>
@@ -96,11 +96,10 @@ body {
 		}
 		var situation = '<%=situation%>';
 		var start = document.getElementById("start");
-		if(situation=="预约中～～"){
+		if (situation == "预约中～～") {
 			document.getElementById("orderButton").disabled = false;
 			document.getElementById("start").disabled = true;
-		}
-		else {
+		} else {
 			document.getElementById("orderButton").disabled = true;
 			document.getElementById("end").disabled = true;
 		}
@@ -145,9 +144,8 @@ body {
 							int limitNum = 0;
 							if (limitNumString == null) {
 								limitNum = 3;
-							} else {
+							} else
 								limitNum = Integer.parseInt(limitNumString);
-							}
 						%>
 						<div class="form">
 							预约口罩数量: <select id="number">
