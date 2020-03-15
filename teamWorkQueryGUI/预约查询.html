@@ -6,10 +6,10 @@
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/jquery-3.4.1.js"></script>
-    <script type="text/javascript" src="js/information.js"></script>
+    <script type="text/javascript" src="js/query.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>口罩预约平台</title>
+    <title>口罩预约查询</title>
     <style type="text/css">
         html,
         body {
@@ -84,10 +84,6 @@
                 return false;
             }
         }
-
-        function query() {
-
-        }
     </script>
 
 </head>
@@ -96,7 +92,7 @@
     <div id="btn1">
         <form name="query" action="SearchServlet" onsubmit="return validateForm()" method="post">
             <input type="text" name="fname" placeholder="请输入预约单号" class="input">
-            <input type="submit" value="查询" onclick=class="btn">
+            <input type="submit" value="查询" onclick="query()" class="btn">
         </form>
     </div>
 </body>
