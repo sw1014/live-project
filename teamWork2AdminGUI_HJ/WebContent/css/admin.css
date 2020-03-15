@@ -1,0 +1,44 @@
+#adminLoginBackground {
+	background-color: black;
+}
+
+#adminLoginDiv {
+	margin: 250px auto;
+	width: 500px;
+	height: 200px;
+	background-color: rgb(245, 245, 245);
+	padding: 10px;
+	border-radius: 10px;
+}
+
+#adminLoginTitleDiv {
+	margin: 10px auto;
+	width: 400px;
+	text-align: center;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 150%;
+}
+
+#adminLoginInputDiv {
+	margin: 10px auto;
+	width: 400px;
+	text-align: center;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 150%;
+}
+
+#adminLoginInputDiv .button {
+	background-color: rgb(24, 201, 255);
+	width: 200px;
+	border-radius: 10px;
+}
+
+#adminBodyBackground {
+	background-color: rgb(71, 233, 219);
+}
+#main {
+	width: 1000px;
+	margin: 10px auto;
+	background-color: white;
+	border-radius: 20px;
+}
