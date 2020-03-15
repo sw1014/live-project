@@ -1,3 +1,13 @@
+.subTitle {
+	font-size: 160%;
+}
+
+.note {
+	color: rgba(75, 75, 75, 0.5);
+	font-size: 100%;
+	text-align: center;
+}
+
 #adminLoginBackground {
 	background-color: black;
 }
@@ -27,7 +37,7 @@
 	font-size: 150%;
 }
 
-#adminLoginInputDiv .button {
+.button {
 	background-color: rgb(24, 201, 255);
 	width: 200px;
 	border-radius: 10px;
@@ -68,10 +78,53 @@
 #navitagorDiv a:hover {
 	color: rgb(102, 209, 252);
 }
-#setAppointmentTimeDiv{
+
+#setAppointmentTimeDiv {
 	width: 800px;
-	margin: 0px auto;
+	margin: 10px auto;
 }
-#subTitle{
-	
+
+#setAppointmentTimeInput {
+	font-size: 150%;
+	text-align: center;
+}
+
+#setAppointmentTimeInput input {
+	width: 200px;
+	height: 150%;
+}
+
+#setAppointmentLimitDiv {
+	width: 800px;
+	margin: 10px auto;
+}
+
+#setAppointmentLimitInput {
+	font-size: 150%;
+	text-align: center;
+}
+
+#setAppointmentLimitInput input {
+	width: 200px;
+	height: 150%;
+}
+
+#setMaskNumDiv {
+	width: 800px;
+	margin: 10px auto;
+}
+
+#setMaskNumInput {
+	font-size: 150%;
+	text-align: center;
+}
+
+#setMaskNumInput input {
+	width: 200px;
+	height: 150%;
+}
+
+#exportLuckyListDiv {
+	width: 800px;
+	margin: 10px auto;
 }
