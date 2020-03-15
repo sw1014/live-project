@@ -33,14 +33,14 @@ public class adminSessionServlet extends HttpServlet {
 		if(request.getParameter("startTime")!=null) {
 			String sT=request.getParameter("startTime");
 			String eT=request.getParameter("endTime");
-			request.getSession().setAttribute("startTime", sT);
-			request.getSession().setAttribute("endTime", eT);
+			request.getSession().setAttribute("startTime", sT);//开始时间
+			request.getSession().setAttribute("endTime", eT);//截止时间
 		}else if(request.getParameter("limitNum")!=null){
 			String lN=request.getParameter("limitNum");
-			request.getSession().setAttribute("limitNum", lN);
+			request.getSession().setAttribute("limitNum", lN);//单人上限
 		}else {
 			String tN=request.getParameter("totalNum");
-			request.getSession().setAttribute("startTime", tN);
+			request.getSession().setAttribute("totalNum", tN);//口罩总数
 		}
 		jumpPage(request, response, "设置成功");
 	}

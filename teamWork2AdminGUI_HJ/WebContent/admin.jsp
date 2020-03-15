@@ -66,10 +66,8 @@
 			//dateList为中签名单的名字列表，即日期，供下方选择
 			System.out.println(currentDay);
 			if (dateList == null) {
-				dateList = new String[3];
-				dateList[0] = "2020-03-13";
-				dateList[1] = "2020-03-14";
-				dateList[2] = "2020-03-15";
+				dateList = new String[1];
+				dateList[0] = "      ";
 			}
 			String[][] nameList = (String[][]) request.getAttribute("nameList");
 			System.out.println(nameList);
