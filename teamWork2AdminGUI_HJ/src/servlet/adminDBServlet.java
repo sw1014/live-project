@@ -45,21 +45,11 @@ public class adminDBServlet extends HttpServlet {
 			getTargetList(request, response);
 		}
 		request.setAttribute("date", request.getParameter("date"));
+		System.out.println("bbbbbbbbbbbbbb");
 		request.getRequestDispatcher("admin.jsp").forward(request, response);
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
-
-	protected void linkDB() {
-		try {
-			Connection c = DBUtil.getConnection();
-			System.out.println("right");
-		} catch (Exception e) {
-			// TODO: handle exception
-			System.out.println("wrong");
-			e.printStackTrace();
-		}
-	}
-
+	
 	protected List<String> getDateList(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			Connection connection = DBUtil.getConnection();
