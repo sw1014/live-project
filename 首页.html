@@ -53,6 +53,11 @@
         height: 40px;
         border-radius: 10px;
     }
+    .form /*表单格式设置*/
+    {
+        margin-top: 5px;
+
+    }
 
 
 
@@ -78,23 +83,23 @@
                        登记信息
                     </h4>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="display: flex;justify-content: center;flex-direction: column;">
                     <form>
-                        姓名:<input type="text" name="name">
-                        身份证号:<input type="text" name="idcard">
-                        手机号:<input type="text" name="phonenumber">
-                        预约口罩数量:<input type="text" name="masknumber">
-                    </form>
+                        <div class="form">姓名:<input type="text" name="name"></div>
+                        <div class="form">身份证号:<input type="text" name="idcard"></div>
+                        <div class="form">手机号:<input type="text" name="phonenumber"></div>
+                        <div class="form">预约口罩数量:<input type="text" name="masknumber"></div>
+                    </form>  
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn2" data-dismiss="modal">结束当前预约
+                    <button type="button" class="btn2" data-dismiss="modal" >结束当前预约
                     </button>
                     <button type="button" class="btn2">
                         开始新的预约
                     </button>
                 </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal -->
+            </div>
+        </div>
     </div>
 
 
