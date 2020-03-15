@@ -81,7 +81,7 @@
 
 #setAppointmentTimeDiv {
 	width: 800px;
-	margin: 10px auto;
+	margin: 50px auto;
 }
 
 #setAppointmentTimeInput {
@@ -96,7 +96,7 @@
 
 #setAppointmentLimitDiv {
 	width: 800px;
-	margin: 10px auto;
+	margin: 50px auto;
 }
 
 #setAppointmentLimitInput {
@@ -111,7 +111,7 @@
 
 #setMaskNumDiv {
 	width: 800px;
-	margin: 10px auto;
+	margin: 50px auto;
 }
 
 #setMaskNumInput {
@@ -126,5 +126,19 @@
 
 #exportLuckyListDiv {
 	width: 800px;
+	margin: 50px auto;
+}
+#exportLuckyList{
+	
+	width: 800px;
 	margin: 10px auto;
+	text-align:center;
+}
+.tableList{
+	margin: 10px auto;
+    background-color: rgba(75, 75, 75,0.1);
+}
+.tableList td{
+	width:200px;
+	border-radius: 10px;
 }
