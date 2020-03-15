@@ -2,55 +2,55 @@ package pojo;
 
 public class User {
 
-    private String name;
-    private String id;
-    private String phone;
-    private String number;
+    private String Name;
+    private String IDNum;
+    private String Phone;
+    private String MaskNum;
     
 
-    public String getId() {
-		return id;
+    public String getIDNum() {
+		return IDNum;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setIDNum(String IDNum) {
+		this.IDNum = IDNum;
 	}
 
 	public String getName() {
-		return name;
+		return Name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String Name) {
+		this.Name = Name;
 	}
 
 	public String getPhone() {
-		return phone;
+		return Phone;
 	}
 
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setPhone(String Phone) {
+		this.Phone = Phone;
 	}
 
-	public String getNumber() {
-		return number;
+	public String getMaskNum() {
+		return MaskNum;
 	}
 
-	public void setNumber(String number) {
-		this.number = number;
+	public void setMaskNum(String MaskNum) {
+		this.MaskNum = MaskNum;
 	}
 	
 	public String getAnonymousName() {
-        if (null == name)
+        if (null == Name)
             return null;
 
-        if (name.length() <= 1)
+        if (Name.length() <= 1)
             return "*";
 
-        if (name.length() == 2)
-            return name.substring(0, 1) + "*";
+        if (Name.length() == 2)
+            return Name.substring(0, 1) + "*";
 
-        char[] categories = name.toCharArray();
+        char[] categories = Name.toCharArray();
         for (int i = 1; i < categories.length - 1; i++) {
             categories[i] = '*';
         }
