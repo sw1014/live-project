@@ -36,9 +36,42 @@
 #adminBodyBackground {
 	background-color: rgb(71, 233, 219);
 }
+
 #main {
 	width: 1000px;
 	margin: 10px auto;
 	background-color: white;
 	border-radius: 20px;
+}
+
+#navitagorDiv {
+	padding: 10px;
+}
+
+#navitagorDiv nav {
+	width: 800px;
+	margin: 0px auto;
+	padding: auto;
+	text-align: center;
+}
+
+#navitagorDiv a {
+	margin: 5px;
+	color: black;
+	font-size: 160%;
+	text-align: center;
+	text-decoration: none;
+	width: 150px;
+	padding: auto;
+}
+
+#navitagorDiv a:hover {
+	color: rgb(102, 209, 252);
+}
+#setAppointmentTimeDiv{
+	width: 800px;
+	margin: 0px auto;
+}
+#subTitle{
+	
 }
