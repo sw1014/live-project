@@ -19,9 +19,6 @@
 			{
 				alert(jsonObj[p]);
 			}
-			
-			
-			
 		},
 		error:function(result){ //失败的函数
 			alert("请求数据失败");
